@@ -9,7 +9,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Layout>
+        <Layout style={{ height: "100%" }}>
           <Layout.Content>
             <AppRouter />
           </Layout.Content>
