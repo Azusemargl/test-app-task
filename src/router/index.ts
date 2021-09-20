@@ -1,4 +1,4 @@
-import { Home, Login } from "../components"
+import { Home, Login } from "../pages"
 
 interface IRouter {
    path: string
