@@ -11,4 +11,12 @@ export const rules = {
       max: max,
       message: message
    }),
+   email: (message: string) => ({
+      pattern: /\S+@\S+\.\S+/,
+      message: message
+   }),
+   phone: (message: string) => ({
+      pattern: /^[0-9-+() ]+$/,
+      message: message
+   }),
 }

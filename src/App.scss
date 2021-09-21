@@ -70,3 +70,14 @@ input {
       font-size: 2.1rem;
    }
 }
+
+.button {
+   &__add {
+      background-color: #1890ff !important;
+      border: 1px solid #1890ff !important;
+   }
+   &__save {
+      background-color: #22cc30 !important;
+      border: 1px solid #22cc30 !important;
+   }
+}

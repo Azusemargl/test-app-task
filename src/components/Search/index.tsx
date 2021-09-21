@@ -1,5 +1,4 @@
 import React from 'react'
-import { IContacts } from '../../models/IContacts'
 import style from './style.module.scss'
 
 interface SearchProps {

@@ -33,7 +33,7 @@ export const initialState = {
 export const contactsReducer = (state = initialState, action: Action): InitiaState => {
    switch (action.type) {
       case 'SET_CONTACT':
-         return { ...state, contacts: { ...state.contacts, ...action.payload } }
+         return { ...state, contacts: [action.payload, ...state.contacts] }
 
       case 'DELETE_CONTACT':
          return { ...state, contacts: state.contacts.filter(contact => contact.id !== action.payload) }

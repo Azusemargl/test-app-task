@@ -1,4 +1,3 @@
-import axios from 'axios'
 import { AppDispatch } from "../../store"
 import { ContactsActions as actions } from './actions'
 import { IContacts } from './../../../models/IContacts'
