@@ -1,21 +1,26 @@
-import { BrowserRouter } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import { store } from './store/store'
+import React from 'react'
+import { useActions } from './hooks'
 import { AppRouter } from './components'
 import { Layout } from 'antd'
+import { IUser } from './models/IUser'
 import './App.scss'
 
 const App = () => {
+  const { setUser, setAuth } = useActions()
+
+  React.useEffect(() => {
+    if (localStorage.getItem("auth")) {
+      setUser({ login: localStorage.getItem("name")} as IUser)
+      setAuth(true)
+    }
+  }, [setUser, setAuth])
+
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <Layout style={{ height: "100%" }}>
-          <Layout.Content>
-            <AppRouter />
-          </Layout.Content>
-        </Layout>
-      </BrowserRouter>
-    </Provider>
+    <Layout style={{ height: "100%" }}>
+      <Layout.Content>
+        <AppRouter />
+      </Layout.Content>
+    </Layout>
   )
 }
 

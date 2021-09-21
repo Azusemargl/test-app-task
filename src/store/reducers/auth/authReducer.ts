@@ -1,4 +1,4 @@
-import { IUser } from '../../../models/Iuser'
+import { IUser } from '../../../models/IUser'
 import { Action, InitiaState } from './types'
 
 export const initialState = {

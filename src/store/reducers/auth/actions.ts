@@ -1,4 +1,4 @@
-import { IUser } from "../../../models/Iuser"
+import { IUser } from "../../../models/IUser"
 
 export const AuthActions = {
    setUser: (payload: IUser) => ({ type: 'SET_USER', payload } as const),

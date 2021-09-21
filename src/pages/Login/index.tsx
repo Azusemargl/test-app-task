@@ -1,47 +1,55 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
-import { Form, Input, Button } from 'antd';
+import { rules } from '../../utils/rules'
+import { useThunks, useTypedSelector } from '../../hooks'
+import { Form, Input, Button } from 'antd'
 import { Row, Card } from 'antd'
-import { AuthThunks } from '../../store/reducers/auth/thunks';
 
 const Login: React.FC = () => {
-   const dispatch = useDispatch()
+   const { login } = useThunks()
+   const { error, isLoading } = useTypedSelector(state => state.authReducer)
 
-   const [login, setLogin] = React.useState("")
+   const [loginName, setLoginName] = React.useState("")
    const [password, setPassword] = React.useState("")
 
    const onSubmit = () => {
-      dispatch(AuthThunks.login(login, password))
+      login(loginName, password)
    }
 
    return (
       <Row justify="center" align="middle" className="form">
          <Card className="form__card">
+            {error && <span className="form__error">{error}</span>}
             <Form
-               name="auth"
                labelCol={{ span: 8 }}
                wrapperCol={{ span: 16 }}
                onFinish={onSubmit}
-               autoComplete="off"
             >
                <Form.Item
                   label="Логин"
                   name="login"
-                  rules={[{ required: true, message: 'Введите Ваше имя' }]}
+                  rules={[
+                     rules.required("Введите имя"),
+                     rules.min(4, "Минимум 4 символа"),
+                     rules.max(14, "Максимум 14 символов")
+                  ]}
                >
-                  <Input value={login} onChange={e => setLogin(e.target.value)} />
+                  <Input value={loginName} onChange={e => setLoginName(e.target.value)} />
                </Form.Item>
 
                <Form.Item
                   label="Пароль"
                   name="password"
-                  rules={[{ required: true, message: 'Ведите Ваш пароль' }]}
+                  rules={[
+                     rules.required("Введите пароль"),
+                     rules.min(4, "Минимум 4 символа"),
+                     rules.max(14, "Максимум 14 символов")
+                  ]}
                >
                   <Input.Password value={password} onChange={e => setPassword(e.target.value)} />
                </Form.Item>
 
                <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                  <Button type="primary" htmlType="submit">Войти</Button>
+                  <Button type="primary" htmlType="submit" disabled={isLoading}>Войти</Button>
                </Form.Item>
             </Form>
          </Card>
