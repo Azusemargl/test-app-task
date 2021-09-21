@@ -1,0 +1,126 @@
+.contact {
+   width: 30rem;
+   margin: 1rem 0 !important;
+
+   a {
+      margin: 0;
+      font-size: 1.6rem;
+
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   p {
+      margin: 0;
+   }
+
+   input {
+      padding: 5px 0;
+      font-size: 1.6rem;
+      border: none;
+      border-bottom: 1px solid rgba(black, 0.2);
+      text-align: right;
+   }
+
+   &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+   }
+
+   &__header_edit {
+      width: 70%;
+      flex-direction: column;
+      text-align: right;
+   }
+
+   &__name_input {
+      width: 100%;
+      font-size: 2.1rem !important;
+   }
+
+   &__name {
+      margin-left: 3rem;
+      font-size: 2.1rem;
+      color: #202020;
+   }
+
+   &__row {
+      padding-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(black, 0.1);
+
+      &:not(:last-child) {
+         margin-bottom: 2rem;
+      }
+   }
+
+   &__row_error {
+      flex-direction: column;
+      color: rgba(rgb(196, 32, 32), 1);
+      text-align: right;
+   }
+
+   &__footer {
+      margin-top: 1rem;
+
+      span {
+         font-size: 1.8rem;
+         cursor: pointer;
+      }
+   }
+
+   &__save_icon {
+      color: rgba(#39c011, 0.7);
+
+      &:hover {
+         color: rgba(#39c011, 1);
+      }
+   }
+
+   &__edit_icon {
+      color: rgba(black, 0.7);
+
+      &:hover {
+         color: rgba(black, 0.9);
+      }
+   }
+
+   &__delete_icon {
+      color: rgba(black, 0.7);
+
+      &:hover {
+         color: rgba(rgb(196, 32, 32), 1);
+      }
+   }
+
+   &__cancel {
+      color: rgba(rgb(196, 32, 32), 0.7) !important;
+      cursor: default !important;
+   }
+
+   &__error {
+      display: block;
+      color: rgba(rgb(196, 32, 32), 1);
+   }
+
+   &__rewrite {
+      span {
+         display: block;
+         padding: 5px;
+
+         &:hover {
+            background-color: rgba(#3d6be9, 0.2);
+            border-radius: 100%;
+         }
+      }
+   }
+
+   &__rewrite_error {
+      background-color: rgba(#3d6be9, 0.2);
+      border-radius: 100%;
+   }
+}

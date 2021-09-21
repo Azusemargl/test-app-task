@@ -1,7 +1,30 @@
 @import '~antd/dist/antd.css';
 
+html {
+   font-size: 62.6%;
+}
+
+body {
+   font-size: 1.6rem;
+}
+
+button {
+   background-color: transparent;
+   border: none;
+}
+
+input {
+   outline: none;
+}
+
 #root {
    height: 100vh;
+}
+
+.container {
+   width: 98rem;
+   padding: 2rem;
+   margin: auto;
 }
 
 .form {
@@ -14,20 +37,36 @@
 
    &__error {
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 20rem;
       color: #c22e2e;
-      font-size: 14px;
+      font-size: 1.4rem;
    }
 }
 
 .header {
    &__name {
-      margin-right: 20px;
+      margin-right: 2rem;
       color: white;
-      font-size: 18px;
+      font-size: 1.8rem;
 
       &::first-letter {
          text-transform: uppercase;
       }
+   }
+}
+
+.empty {
+   margin-top: 3rem;
+
+   &__row {
+      flex-direction: column;
+   }
+
+   &__icon {
+      font-size: 4.2rem;
+   }
+
+   &__text {
+      font-size: 2.1rem;
    }
 }
